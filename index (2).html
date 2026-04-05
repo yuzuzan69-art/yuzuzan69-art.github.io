@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>旅ろぐ — グルメ</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#faf9f7;--text:#1a1a18;--muted:#8a8880;--accent:#b85c38;--border:#e8e4de;--serif:'Noto Serif JP',serif;--sans:'Noto Sans JP',sans-serif}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.8}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,249,247,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:60px}
+.nav-logo{font-family:var(--serif);font-size:18px;color:var(--text);text-decoration:none;letter-spacing:.08em}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.hero{margin-top:60px;position:relative;height:560px;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1400&q=80')center/cover no-repeat}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,6,.85),rgba(10,8,6,.1) 60%)}
+.hero-content{position:relative;z-index:1;padding:48px 56px;max-width:680px;animation:fadeUp .8s ease forwards}
+.eyebrow{font-size:11px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-family:var(--serif);font-size:44px;font-weight:300;color:#fff;line-height:1.4;margin-bottom:16px}
+.hero p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.9;margin-bottom:28px}
+.btn{display:inline-block;padding:12px 28px;border:1px solid #fff;font-size:12px;letter-spacing:.1em;color:#fff;text-decoration:none;transition:all .25s}
+.btn:hover{background:#fff;color:var(--text)}
+.wrap{max-width:1100px;margin:0 auto;padding:64px 48px}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:36px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.sec-title{font-family:var(--serif);font-size:22px;font-weight:400}
+.sec-link{font-size:12px;color:var(--muted);text-decoration:none}
+.sec-link:hover{color:var(--accent)}
+.featured{display:grid;grid-template-columns:1.6fr 1fr;gap:20px;margin-bottom:20px}
+.fcard{position:relative;overflow:hidden;cursor:pointer}
+.fcard:hover img{transform:scale(1.04)}
+.fcard img{width:100%;object-fit:cover;display:block;transition:transform .5s}
+.fcard.main img{height:360px}
+.fcard.sub img{height:160px}
+.foverlay{position:absolute;bottom:0;left:0;right:0;padding:24px 20px 18px;background:linear-gradient(to top,rgba(8,6,4,.88),transparent)}
+.ftag{font-size:10px;letter-spacing:.18em;color:var(--accent);margin-bottom:5px}
+.ftitle{font-family:var(--serif);font-size:16px;color:#fff;line-height:1.6;font-weight:400}
+.fmeta{font-size:11px;color:rgba(255,255,255,.55);margin-top:3px}
+.fsub{display:flex;flex-direction:column;gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.acard{cursor:pointer}
+.acard:hover img{transform:scale(1.04)}
+.aphoto{overflow:hidden;margin-bottom:14px}
+.acard img{width:100%;height:220px;object-fit:cover;display:block;transition:transform .5s}
+.atag{font-size:10px;letter-spacing:.16em;color:var(--accent);margin-bottom:5px}
+.atitle{font-family:var(--serif);font-size:15px;color:var(--text);line-height:1.7;margin-bottom:5px;font-weight:400}
+.ameta{font-size:12px;color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:28px 48px;display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto}
+.flogo{font-family:var(--serif);font-size:16px}
+.flogo span{color:var(--accent)}
+footer p{font-size:12px;color:var(--muted)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.hero-content{padding:32px 20px}.hero h1{font-size:28px}.wrap{padding:48px 20px}.featured,.grid3{grid-template-columns:1fr}.fcard.main img{height:240px}footer{flex-direction:column;gap:10px;padding:24px 20px;text-align:center}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="#">旅<span>ろ</span>ぐ</a>
+  <ul class="nav-links">
+    <li><a href="#">レストラン</a></li><li><a href="#">カフェ</a></li>
+    <li><a href="#">スイーツ</a></li><li><a href="#">エリア別</a></li>
+  </ul>
+</nav>
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="eyebrow">Gourmet Journal</div>
+    <h1>食べることは、<br>旅することだ。</h1>
+    <p>関西を中心に、本当においしいお店だけを記録する。</p>
+    <a href="#" class="btn">記事を読む</a>
+  </div>
+</div>
+<div class="wrap">
+  <div class="sec-head"><h2 class="sec-title">注目の記事</h2><a href="#" class="sec-link">すべて見る →</a></div>
+  <div class="featured">
+    <div class="fcard main">
+      <img src="https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=900&q=80" alt="寿司" loading="lazy">
+      <div class="foverlay"><div class="ftag">神戸 · seafood</div><div class="ftitle">神戸・元町で見つけた、予約の取れない寿司屋の話</div><div class="fmeta">2026年3月28日</div></div>
+    </div>
+    <div class="fsub">
+      <div class="fcard sub">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="カフェ" loading="lazy">
+        <div class="foverlay"><div class="ftag">大阪 · cafe</div><div class="ftitle">堀江の隠れ家カフェ、3選</div></div>
+      </div>
+      <div class="fcard sub">
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80" alt="ランチ" loading="lazy">
+        <div class="foverlay"><div class="ftag">西宮 · lunch</div><div class="ftitle">地元民が通う本当に旨いランチ</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="sec-head" style="margin-top:48px"><h2 class="sec-title">最新記事</h2><a href="#" class="sec-link">すべて見る →</a></div>
+  <div class="grid3">
+    <div class="acard">
+      <div class="aphoto"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80" alt="イタリアン" loading="lazy"></div>
+      <div class="atag">大阪 · italian</div><div class="atitle">北堀江の本格イタリアン、予算5,000円で満足できるか</div><div class="ameta">3月5日 · 6 min</div>
+    </div>
+    <div class="acard">
+      <div class="aphoto"><img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&q=80" alt="カレー" loading="lazy"></div>
+      <div class="atag">神戸 · curry</div><div class="atitle">元町でスパイスカレーを食べ比べた記録</div><div class="ameta">2月26日 · 5 min</div>
+    </div>
+    <div class="acard">
+      <div class="aphoto"><img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&q=80" alt="焼肉" loading="lazy"></div>
+      <div class="atag">西宮 · bbq</div><div class="atitle">コスパ最強の焼肉屋、西宮・今津エリア</div><div class="ameta">2月18日 · 4 min</div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="flogo">旅<span>ろ</span>ぐ</div>
+  <p>© 2026 旅ろぐ · 関西グルメの記録</p>
+</footer>
+</body>
+</html>
